@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match next-generation design brief */
+  --background: #f9fafb; /* Soft Light Gray for overall background */
+  --foreground: #4b5563; /* Dark Gray for primary text */
+  --card: rgba(255, 255, 255, 0.8); /* Glassmorphic card background */
+  --card-foreground: #4b5563; /* Dark Gray for card text */
+  --popover: rgba(255, 255, 255, 0.9); /* Slightly opaque for popovers */
+  --popover-foreground: #4b5563; /* Dark Gray for popover text */
+  --primary: #0891b2; /* Cyan-600 for primary actions */
+  --primary-foreground: #ffffff; /* White for text on primary actions */
+  --secondary: #84cc16; /* Vibrant Green for secondary actions */
+  --secondary-foreground: #ffffff; /* White for text on secondary actions */
+  --muted: #f0fdf4; /* Soft background for muted elements */
+  --muted-foreground: #374151; /* Dark Gray for muted text */
+  --accent: #84cc16; /* Same Vibrant Green for accent elements */
+  --accent-foreground: #ffffff; /* White for accent text */
+  --destructive: #dc2626; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White for text on destructive actions */
+  --border: rgba(0, 0, 0, 0.1); /* Light border for subtle separation */
+  --input: #ffffff; /* White for input backgrounds */
+  --ring: rgba(8, 145, 178, 0.5); /* Soft cyan ring for focus states */
+  --chart-1: #0891b2; /* Chart color 1 */
+  --chart-2: #15803d; /* Chart color 2 */
+  --chart-3: #fbbf24; /* Chart color 3 */
+  --chart-4: #9333ea; /* Chart color 4 */
+  --chart-5: #dc2626; /* Chart color 5 */
+  --radius: 0.5rem; /* Rounded corners for a softer appearance */
+  --sidebar: rgba(255, 255, 255, 0.8); /* Glassmorphic sidebar background */
+  --sidebar-foreground: #4b5563; /* Dark Gray for sidebar text */
+  --sidebar-primary: #0891b2; /* Primary color for sidebar accents */
+  --sidebar-primary-foreground: #ffffff; /* White for sidebar primary text */
+  --sidebar-accent: #84cc16; /* Accent color for sidebar highlights */
+  --sidebar-accent-foreground: #ffffff; /* White for sidebar accent text */
+  --sidebar-border: rgba(0, 0, 0, 0.1); /* Light border for sidebar */
+  --sidebar-ring: rgba(8, 145, 178, 0.5); /* Ring color for sidebar focus */
+}
+
+.dark {
+  --background: #0f172a; /* Dark slate for dark mode background */
+  --foreground: #f1f5f9; /* Light slate for dark mode text */
+  --card: rgba(15, 23, 42, 0.8); /* Dark glassmorphic card background */
+  --card-foreground: #f1f5f9; /* Light slate for dark mode card text */
+  --popover: rgba(15, 23, 42, 0.9); /* Dark popover background */
+  --popover-foreground: #f1f5f9; /* Light slate for dark mode popover text */
+  --primary: #0ea5e9; /* Lighter cyan for dark mode primary */
+  --primary-foreground: #0f172a; /* Dark text on primary in dark mode */
+  --secondary: #84cc16; /* Keep vibrant green for secondary */
+  --secondary-foreground: #0f172a; /* Dark text on secondary */
+  --muted: #1e293b; /* Dark muted background */
+  --muted-foreground: #94a3b8; /* Light gray for muted text */
+  --accent: #84cc16; /* Keep vibrant green for accent */
+  --accent-foreground: #0f172a; /* Dark text on accent */
+  --destructive: #ef4444; /* Brighter red for dark mode */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: rgba(255, 255, 255, 0.1); /* Light border for dark mode */
+  --input: #1e293b; /* Dark input background */
+  --ring: rgba(14, 165, 233, 0.5); /* Cyan ring for dark mode focus */
+  --chart-1: #0ea5e9; /* Lighter chart colors for dark mode */
+  --chart-2: #22c55e;
+  --chart-3: #f59e0b;
+  --chart-4: #a855f7;
+  --chart-5: #ef4444;
+  --sidebar: rgba(15, 23, 42, 0.8); /* Dark glassmorphic sidebar */
+  --sidebar-foreground: #f1f5f9; /* Light text for dark sidebar */
+  --sidebar-primary: #0ea5e9; /* Lighter primary for dark sidebar */
+  --sidebar-primary-foreground: #0f172a; /* Dark text on sidebar primary */
+  --sidebar-accent: #84cc16; /* Keep accent color */
+  --sidebar-accent-foreground: #0f172a; /* Dark text on sidebar accent */
+  --sidebar-border: rgba(255, 255, 255, 0.1); /* Light border for dark sidebar */
+  --sidebar-ring: rgba(14, 165, 233, 0.5); /* Cyan ring for dark sidebar */
+}
+
+@theme inline {
+  /* Updated font configuration for Montserrat and Open Sans */
+  --font-sans: "Open Sans", var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: "Montserrat", var(--font-geist-sans);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Added custom heading font class */
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  /* Added glassmorphism utility classes */
+  .glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-card {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Added smooth animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(8, 145, 178, 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(8, 145, 178, 0.6);
+    }
+  }
+}
+
+/* Added Google Fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap");

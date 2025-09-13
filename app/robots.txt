@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /portfolio
+Allow: /blog
+Allow: /contact
+Allow: /faq
+
+# Sitemap location
+Sitemap: https://devcodeweb.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
