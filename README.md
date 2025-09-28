@@ -233,7 +233,7 @@ This project is proprietary and confidential. All rights reserved by DEVCODEWEB.
 ## 👥 Team
 
 - **Nikhil Kumawat** - CEO & Co-Founder
-- **Vivek Kumawat** - CTO & Co-Founder
+- **Vivek Kumawat** - CFO & Co-Founder
 
 ## 📞 Contact
 
